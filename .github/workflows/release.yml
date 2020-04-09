@@ -15,6 +15,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOS: linux
           GOARCH: amd64
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
 #       upload_url: ${{ github.event.release.release.upload_url }}
 
 
