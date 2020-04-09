@@ -1,4 +1,5 @@
-on: release
+#on: release
+on: push
 name: build on release
 jobs:
   build:
