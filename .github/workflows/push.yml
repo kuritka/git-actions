@@ -13,5 +13,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOOS: linux
         GOARCH: amd64
-        UPLOAD_URL: https://uploads.github.com/repos/kuritka/git-actions/releases/
+#        UPLOAD_URL: https://uploads.github.com/repos/kuritka/git-actions/releases/
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
 

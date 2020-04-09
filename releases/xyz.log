@@ -1,0 +1,70 @@
+Skip to content
+
+Pull requests
+Issues
+Marketplace
+Explore
+
+@kuritka
+kuritka
+/
+git-actions
+0
+0
+0
+ Code  Issues 0  Pull requests 0  Actions  Projects 0  Wiki  Security  Insights  Settings
+upload repo
+master   @kuritka  2df754f
+
+build
+on: push
+
+build / Go Test
+failed 3 minutes ago in 45s
+
+  Set up job 2s
+  Build AbsaOSS/golang-pipeline/go1.13/release@master 40s
+  Run actions/checkout@master 1s
+  go1.13 release 2s
+  0     0    0     0    0     0      0      0 --:--:-- --:--:-- --:--:--     0curl: (6) Could not resolve host: null
+++ EVENT_DATA='{
+  "after": "2df754faecf8d85d8aba9e537556378f63e3c5ce",
+  "base_ref": null,
+  "before": "c6597fdf3a0779e9e1cacfcd88a4a6192e22b869",
+  "commits": [
+    {
+      "author": {
+        "email": "kuritka@gmail.com",
+        "name": "kuritka",
+        "username": "kuritka"
+      },
+      "committer": {
+        "email": "kuritka@gmail.com",
+        "name": "kuritka",
+        "username": "kuritka"
+      },
+      "distinct": true,
+      "id": "2df754faecf8d85d8aba9e537556378f63e3c5ce",
+      "message": "upload repo",
+      "timestamp": "2020-04-09T15:26:27+02:00",
+      "tree_id": "e11ca495d265dda9e4a78ba77c8b27d7e46ad63b",
+      "url": "https://github.com/kuritka/git-actions/commit/2df754faecf8d85d8aba9e537556378f63e3c5ce"
+    }
+  ],
+  "compare": "https://github.com/kuritka/git-actions/compare/c6597fdf3a07...2df754faecf8",
+  "created": false,
+  "deleted": false,
+  "forced": false,
+  "head_commit": {
+  Post actions/checkout@master 0s
+/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+Post job cleanup.
+/usr/bin/git version
+git version 2.25.2
+/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :
+/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+http.https://github.com/.extraheader
+/usr/bin/git config --local --unset-all http.https://github.com/.extraheader
+/usr/bin/git submodule foreach --recursive git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :
+  Complete job 0s
