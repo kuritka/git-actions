@@ -1,10 +1,9 @@
-#on: release
+# thanks to this I'm releasing after tag is added
 on:
   push:
     # Sequence of patterns matched against refs/tags
     tags:
       - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-
 
 #on: release
 name: build on release
@@ -23,16 +22,20 @@ jobs:
           GOOS: linux
           GOARCH: amd64
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
-          draft: false
-          prerelease: false
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          upload_url: ${{ github.event.release.release.upload_url }}
+          upload_url: ${{ steps.get_release_url.outputs.URL }}
+          asset_path: ./remoteAudio-${{ steps.get_version.outputs.VERSION }}-${{ matrix.OS }}-${{ matrix.ARCH }}.zip
+          asset_name: remoteAudio-${{ steps.get_version.outputs.VERSION }}-${{ matrix.OS }}-${{ matrix.ARCH }}.zip
+          asset_content_type: application/gzip
+#          tag_name: ${{ github.ref }}
+#          release_name: Release ${{ github.ref }}
+#          body: |
+#            Changes in this Release
+#            - First Change
+#            - Second Change
+#          draft: false
+#          prerelease: false
+##          upload_url: ${{ steps.create_release.outputs.upload_url }}
+#          upload_url: ${{ github.event.release.release.upload_url }}
 
 
 
