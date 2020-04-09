@@ -9,7 +9,7 @@ jobs:
       - uses: actions/checkout@master
       - name: go1.13 release linux
         uses: kuritka/golang-pipeline/go1.13/release@master
-        if: github.event.action == 'published'
+#       if: github.event.action == 'published'
         env:
           PROJECT_PATH: "./cmd/manager"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
