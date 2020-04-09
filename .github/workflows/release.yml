@@ -1,0 +1,20 @@
+on: release
+name: build on release
+jobs:
+  build:
+    name: Go RELEASE
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: go1.13 release linux
+        uses: kuritka/golang-pipeline/go1.13/release@master
+        if: github.event.action == 'published'
+        env:
+          PROJECT_PATH: "./cmd/manager"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOS: linux
+          GOARCH: amd64
+#       upload_url: ${{ github.event.release.release.upload_url }}
+
+
+
