@@ -12,4 +12,6 @@ jobs:
         PROJECT_PATH: "./cmd/manager"
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         GOOS: linux
-        GOARCH: amd64        
+        GOARCH: amd64
+        UPLOAD_URL: https://uploads.github.com/repos/kuritka/git-actions/releases/
+
