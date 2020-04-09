@@ -16,8 +16,8 @@ jobs:
           GOOS: linux
           GOARCH: amd64
         with:
-          tag_name: ${{ github.ref }}
-          release_name: Release ${{ github.ref }}
+#          tag_name: ${{ github.ref }}
+#          release_name: Release ${{ github.ref }}
           upload_url: ${{ steps.create_release.outputs.upload_url }}
 #       upload_url: ${{ github.event.release.release.upload_url }}
 
