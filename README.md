@@ -2,9 +2,9 @@
 
 ## release
 
-You execute release by calling release action. Target for release package could be specified in `upload_url` property, 
-but it is up to you where you want to upload releases. You can release to your custom repo by `push` or whatever of you want.
-Extracted `upload_url` (returned by `release`)  in our case looks  like this `https://uploads.github.com/repos/kuritka/git-actions/releases/25416282/assets`
+Execute release by calling release action. Target for release package is specified in `upload_url` property, 
+but at the end of the day it is up to you where you want to upload releases. You can release to your custom repo by `push` or whatever of you want.
+Extracted `upload_url` (returned by `release`)  in our case looks like this `https://uploads.github.com/repos/kuritka/git-actions/releases/25416282/assets`
 
 
 
