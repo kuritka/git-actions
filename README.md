@@ -11,12 +11,45 @@ Extracted `upload_url` (returned by `release`)  in our case looks  like this `ht
 following is not mandatory, but you should create tag on your master / release branch
 
 ```bash
+...
+git merge release_branch
+git push --set-upstream origin release
+
 git tag -a v0.0.6 -m "sixth tag."
 git push --tags
 ```
 
 in your repo click on `releases > Draft new release > fill tag (ie. v0.0.1 ) title and comment > publish release` .
 
+
+```yaml
+# limit release to publish action otherwise GIT will run multiple actions which runs multiple builds simultaneously
+on:
+  release:
+    types: [published]
+
+name: build on release
+jobs:
+  build:
+    name: Go RELEASE
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: go1.13 release linux
+        uses: shoukoo/golang-pipeline/go1.13/release@master
+#        if statement is not needed here, it lives here only for demonstrative purposes
+#        if: github.event.action == 'published'
+        env:
+          PROJECT_PATH: "./cmd/manager"
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GOOS: linux
+          GOARCH: amd64
+        with:
+          tag_name: ${{ github.ref }}
+          release_name: Release ${{ github.ref }}
+#          upload_url: ${{ steps.create_release.outputs.upload_url }}
+#       upload_url: ${{ github.event.release.release.upload_url }}
+```
 
 ## push
 
@@ -29,7 +62,7 @@ git tag -a v0.0.6 -m "six tag."
 git push --tags
 ```
 
-```bash
+```yaml
 on:
   push:
     # Sequence of patterns matched against refs/tags
