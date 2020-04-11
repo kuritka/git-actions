@@ -1,4 +1,3 @@
-#on: release
 on: release
 name: build on release
 jobs:
