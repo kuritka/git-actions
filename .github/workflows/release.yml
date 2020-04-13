@@ -12,9 +12,9 @@ jobs:
 
       - name: go1.14 linters
         uses: AbsaOSS/golang-pipeline/go1.14/linter@master
-          with:
-            GOLINT: on
-            GOLINTPATH: pkg/controller
+        with:
+          GOLINT: on
+          GOLINTPATH: pkg/controller
 
       - name: go1.14 test
         uses: AbsaOSS/golang-pipeline/go1.14/test@master
