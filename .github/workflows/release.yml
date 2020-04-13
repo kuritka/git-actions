@@ -11,16 +11,16 @@ jobs:
       - uses: actions/checkout@master
 
       - name: go1.14 linters
-        uses: shoukoo/golang-pipeline/go1.14/linter@master
+        uses: kuritka/golang-pipeline/go1.14/linter@master
         with:
           GOLINT: on
           GOLINTPATH: pkg/controller
 
       - name: go1.14 test
-        uses: shoukoo/golang-pipeline/go1.14/test@master
+        uses: kuritka/golang-pipeline/go1.14/test@master
 
       - name: go1.14 release linux
-        uses: shoukoo/golang-pipeline/go1.14/release@master
+        uses: kuritka/golang-pipeline/go1.14/release@master
         env:
           #when path is different from root
           PROJECT_PATH: "./cmd/manager"
