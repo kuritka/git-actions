@@ -9,6 +9,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
+
+      - name: go1.14 linters
+        uses: AbsaOSS/golang-pipeline/go1.14/linter@master
+          with:
+            GOLINT: on
+            GOLINTPATH: pkg/controller
+
+      - name: go1.14 test
+        uses: AbsaOSS/golang-pipeline/go1.14/test@master
+
       - name: go1.14 release linux
         uses: shoukoo/golang-pipeline/go1.14/release@master
         env:
