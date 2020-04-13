@@ -1,4 +1,3 @@
-# limit release to publish action otherwise GIT will run multiple actions which runs multiple builds simultaneously
 on:
   release:
     types: [published]
@@ -10,11 +9,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@master
-      - name: go1.13 release linux
-        uses: shoukoo/golang-pipeline/go1.13/release@master
-#        if statement is not needed here, it lives here only for demonstrative purposes
-#        if: github.event.action == 'published'
+      - name: go1.14 release linux
+        uses: shoukoo/golang-pipeline/go1.14/release@master
         env:
+          #when path different than root
           PROJECT_PATH: "./cmd/manager"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOS: linux
@@ -22,8 +20,7 @@ jobs:
         with:
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-#          upload_url: ${{ steps.create_release.outputs.upload_url }}
-#       upload_url: ${{ github.event.release.release.upload_url }}
+
 
 
 
