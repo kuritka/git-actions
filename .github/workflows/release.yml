@@ -16,11 +16,11 @@ jobs:
           GOLINT: on
           GOLINTPATH: pkg/controller
 
-      - name: go1.13 test
-        uses: shoukoo/golang-pipeline/go1.13/test@master
+      - name: go1.14 test
+        uses: kuritka/golang-pipeline/go1.14/test@master
 
-      - name: go1.13 release linux
-        uses: shoukoo/golang-pipeline/go1.13/release@master
+      - name: go1.14 release linux
+        uses: kuritka/golang-pipeline/go1.14/release@master
         env:
           #when path is different from root
           PROJECT_PATH: "./cmd/manager"
