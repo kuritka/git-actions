@@ -44,7 +44,17 @@ jobs:
     name: Go RELEASE
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@master
+      - name: go1.13 linters
+        uses: AbsaOSS/golang-pipeline/go1.13/linter@master
+          with:
+            GOLINT: on
+            GOLINTPATH: pkg/controller
+
+      - name: go1.13 test
+        uses: AbsaOSS/golang-pipeline/go1.13/test@master
+
       - name: go1.13 release linux
         uses: shoukoo/golang-pipeline/go1.13/release@master
 #        if statement is not needed here (viz first line), it lives here only for demonstrative purposes
