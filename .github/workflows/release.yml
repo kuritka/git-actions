@@ -22,7 +22,7 @@ jobs:
       - name: go1.14 release linux
         uses: AbsaOSS/golang-pipeline/go1.14/release@master
         env:
-          #when path different than root
+          #when path is different from root
           PROJECT_PATH: "./cmd/manager"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GOOS: linux
