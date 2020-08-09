@@ -1,5 +1,11 @@
 # runnig workflows
 
+
+## my note:
+
+you have to reuse or create project containing `lint`, `test` etc script. The script have to be called from docker i.e. docker base image.
+So point to directory where `Dockerfile` exists and run script from itself. i.e. `https://github.com/securego/gosec`, `https://github.com/kuritka/golang-pipeline/tree/master/go1.14/test`.
+
 ## release
 
 Execute release by calling release action. Target for release package is specified in `upload_url` property, 
